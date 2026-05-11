@@ -1,0 +1,70 @@
+aid: microsoft-defender-for-cloud
+name: Microsoft Defender for Cloud
+description: >-
+  Microsoft Defender for Cloud is Microsoft's unified cloud-native application
+  protection platform (CNAPP) that delivers cloud security posture management
+  (CSPM) and cloud workload protection (CWPP) across Azure, AWS, GCP, and
+  hybrid/on-premises workloads. It provides security recommendations, secure
+  score, regulatory compliance assessments, vulnerability management, and
+  advanced threat protection for servers, containers, databases, storage, and
+  more. The Defender for Cloud REST APIs are part of the Azure Resource
+  Manager surface and authenticate via Azure Active Directory OAuth 2.0 tokens.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Cloud Security
+  - CSPM
+  - CWPP
+  - CNAPP
+  - Threat Protection
+  - Compliance
+  - Vulnerability Management
+  - Azure
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/microsoft-defender-for-cloud/refs/heads/main/apis.yml
+created: '2026-05-11'
+modified: '2026-05-11'
+specificationVersion: '0.19'
+apis:
+  - aid: microsoft-defender-for-cloud:rest-api
+    name: Microsoft Defender for Cloud REST API
+    description: >-
+      Azure Resource Manager REST API for managing Defender for Cloud
+      assessments, alerts, recommendations, secure score, regulatory compliance,
+      pricing/plans, security contacts, and connectors for multi-cloud
+      environments. Authentication is via Azure AD OAuth 2.0 bearer tokens
+      against the management.azure.com endpoint with api-version query
+      parameters.
+    humanURL: https://learn.microsoft.com/en-us/rest/api/defenderforcloud/
+    baseURL: https://management.azure.com
+    tags:
+      - Cloud Security
+      - CSPM
+      - CWPP
+      - Azure Resource Manager
+      - Threat Protection
+    properties:
+      - type: Documentation
+        url: https://learn.microsoft.com/en-us/rest/api/defenderforcloud/
+      - type: Operation Groups
+        url: https://learn.microsoft.com/en-us/rest/api/defenderforcloud-composite/operation-groups
+      - type: OpenAPI Specifications
+        url: https://github.com/Azure/azure-rest-api-specs/tree/main/specification/security
+      - type: Azure SDK
+        url: https://learn.microsoft.com/en-us/azure/developer/
+common:
+  - type: Website
+    url: https://azure.microsoft.com/en-us/products/defender-for-cloud
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/azure/defender-for-cloud/
+  - type: REST API Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/defenderforcloud/
+  - type: Pricing
+    url: https://azure.microsoft.com/en-us/pricing/details/defender-for-cloud/
+  - type: Sign Up
+    url: https://azure.microsoft.com/en-us/free/
+  - type: GitHub OpenAPI Specs
+    url: https://github.com/Azure/azure-rest-api-specs/tree/main/specification/security
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
