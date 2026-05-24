@@ -65,6 +65,8 @@ common:
     url: https://azure.microsoft.com/en-us/free/
   - type: GitHub OpenAPI Specs
     url: https://github.com/Azure/azure-rest-api-specs/tree/main/specification/security
+  - type: LLMsTxt
+    url: https://azure.microsoft.com/llms.txt
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
