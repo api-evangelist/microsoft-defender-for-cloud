@@ -53,6 +53,8 @@ apis:
       - type: Azure SDK
         url: https://learn.microsoft.com/en-us/azure/developer/
 common:
+  - type: OAuthScopes
+    url: scopes/microsoft-defender-for-cloud-scopes.yml
   - type: Website
     url: https://azure.microsoft.com/en-us/products/defender-for-cloud
   - type: Documentation
@@ -67,6 +69,8 @@ common:
     url: https://github.com/Azure/azure-rest-api-specs/tree/main/specification/security
   - type: LlmsText
     url: https://azure.microsoft.com/llms.txt
+  - url: https://www.microsoft.com/en-us/security/blog/product/microsoft-defender-for-cloud/feed/
+    type: Blog
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
