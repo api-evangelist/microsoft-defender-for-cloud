@@ -53,6 +53,12 @@ apis:
       - type: Azure SDK
         url: https://learn.microsoft.com/en-us/azure/developer/
 common:
+  - type: VulnerabilityDisclosure
+    url: security/microsoft-defender-for-cloud-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/microsoft-defender-for-cloud-domain-security.yml
+  - type: Authentication
+    url: authentication/microsoft-defender-for-cloud-authentication.yml
   - type: OAuthScopes
     url: scopes/microsoft-defender-for-cloud-scopes.yml
   - type: Website
