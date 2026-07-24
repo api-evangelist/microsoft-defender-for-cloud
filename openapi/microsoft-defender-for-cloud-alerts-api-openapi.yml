@@ -1,0 +1,263 @@
+openapi: 3.1.0
+info:
+  title: Microsoft Defender for Cloud REST Alerts API
+  description: 'Azure Resource Manager REST API for Microsoft Defender for Cloud.
+
+    Provides cloud security posture management (CSPM) and cloud workload
+
+    protection (CWPP) - security alerts, security assessments, secure
+
+    scores, regulatory compliance, and pricing/plans. Authentication uses
+
+    Azure AD OAuth 2.0 bearer tokens against the management.azure.com
+
+    endpoint with api-version query parameters.
+
+    '
+  version: '2022-01-01'
+  contact:
+    name: Kin Lane
+    email: kin@apievangelist.com
+  license:
+    name: Microsoft Terms of Use
+    url: https://www.microsoft.com/en-us/legal/terms-of-use
+servers:
+- url: https://management.azure.com
+  description: Azure Resource Manager endpoint
+security:
+- azure_auth:
+  - user_impersonation
+tags:
+- name: Alerts
+  description: Security alert operations
+paths:
+  /subscriptions/{subscriptionId}/providers/Microsoft.Security/alerts:
+    get:
+      tags:
+      - Alerts
+      summary: List all alerts for the subscription
+      operationId: alerts_list
+      parameters:
+      - $ref: '#/components/parameters/subscriptionId'
+      - $ref: '#/components/parameters/apiVersion'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AlertList'
+  /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Security/alerts:
+    get:
+      tags:
+      - Alerts
+      summary: List alerts for a resource group
+      operationId: alerts_listByResourceGroup
+      parameters:
+      - $ref: '#/components/parameters/subscriptionId'
+      - $ref: '#/components/parameters/resourceGroupName'
+      - $ref: '#/components/parameters/apiVersion'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AlertList'
+  /subscriptions/{subscriptionId}/locations/{ascLocation}/alerts:
+    get:
+      tags:
+      - Alerts
+      summary: List subscription-level alerts in a specific region
+      operationId: alerts_listSubscriptionLevelByRegion
+      parameters:
+      - $ref: '#/components/parameters/subscriptionId'
+      - $ref: '#/components/parameters/ascLocation'
+      - $ref: '#/components/parameters/apiVersion'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AlertList'
+  /subscriptions/{subscriptionId}/locations/{ascLocation}/alerts/{alertName}:
+    get:
+      tags:
+      - Alerts
+      summary: Get a subscription-level alert
+      operationId: alerts_getSubscriptionLevel
+      parameters:
+      - $ref: '#/components/parameters/subscriptionId'
+      - $ref: '#/components/parameters/ascLocation'
+      - $ref: '#/components/parameters/alertName'
+      - $ref: '#/components/parameters/apiVersion'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Alert'
+  /subscriptions/{subscriptionId}/locations/{ascLocation}/alerts/{alertName}/dismiss:
+    post:
+      tags:
+      - Alerts
+      summary: Dismiss a subscription-level alert
+      operationId: alerts_updateSubscriptionLevelStateToDismiss
+      parameters:
+      - $ref: '#/components/parameters/subscriptionId'
+      - $ref: '#/components/parameters/ascLocation'
+      - $ref: '#/components/parameters/alertName'
+      - $ref: '#/components/parameters/apiVersion'
+      responses:
+        '204':
+          description: No Content
+  /subscriptions/{subscriptionId}/locations/{ascLocation}/alerts/{alertName}/resolve:
+    post:
+      tags:
+      - Alerts
+      summary: Resolve a subscription-level alert
+      operationId: alerts_updateSubscriptionLevelStateToResolve
+      parameters:
+      - $ref: '#/components/parameters/subscriptionId'
+      - $ref: '#/components/parameters/ascLocation'
+      - $ref: '#/components/parameters/alertName'
+      - $ref: '#/components/parameters/apiVersion'
+      responses:
+        '204':
+          description: No Content
+  /subscriptions/{subscriptionId}/locations/{ascLocation}/alerts/{alertName}/activate:
+    post:
+      tags:
+      - Alerts
+      summary: Activate a subscription-level alert
+      operationId: alerts_updateSubscriptionLevelStateToActivate
+      parameters:
+      - $ref: '#/components/parameters/subscriptionId'
+      - $ref: '#/components/parameters/ascLocation'
+      - $ref: '#/components/parameters/alertName'
+      - $ref: '#/components/parameters/apiVersion'
+      responses:
+        '204':
+          description: No Content
+  /subscriptions/{subscriptionId}/locations/{ascLocation}/alerts/default/simulate:
+    post:
+      tags:
+      - Alerts
+      summary: Simulate security alerts
+      operationId: alerts_simulate
+      parameters:
+      - $ref: '#/components/parameters/subscriptionId'
+      - $ref: '#/components/parameters/ascLocation'
+      - $ref: '#/components/parameters/apiVersion'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                properties:
+                  type: object
+                  properties:
+                    kind:
+                      type: string
+                    alertType:
+                      type: string
+      responses:
+        '204':
+          description: No Content
+components:
+  parameters:
+    alertName:
+      name: alertName
+      in: path
+      required: true
+      schema:
+        type: string
+    resourceGroupName:
+      name: resourceGroupName
+      in: path
+      required: true
+      schema:
+        type: string
+    subscriptionId:
+      name: subscriptionId
+      in: path
+      required: true
+      schema:
+        type: string
+    apiVersion:
+      name: api-version
+      in: query
+      required: true
+      schema:
+        type: string
+        default: '2022-01-01'
+    ascLocation:
+      name: ascLocation
+      in: path
+      required: true
+      description: Defender for Cloud location/region
+      schema:
+        type: string
+  schemas:
+    Alert:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        type:
+          type: string
+        properties:
+          type: object
+          properties:
+            status:
+              type: string
+              enum:
+              - Active
+              - InProgress
+              - Resolved
+              - Dismissed
+            severity:
+              type: string
+              enum:
+              - Informational
+              - Low
+              - Medium
+              - High
+            alertDisplayName:
+              type: string
+            description:
+              type: string
+            timeGeneratedUtc:
+              type: string
+              format: date-time
+            compromisedEntity:
+              type: string
+            intent:
+              type: string
+            resourceIdentifiers:
+              type: array
+              items:
+                type: object
+    AlertList:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/Alert'
+        nextLink:
+          type: string
+  securitySchemes:
+    azure_auth:
+      type: oauth2
+      description: Azure Active Directory OAuth 2.0
+      flows:
+        implicit:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize
+          scopes:
+            user_impersonation: impersonate your user account

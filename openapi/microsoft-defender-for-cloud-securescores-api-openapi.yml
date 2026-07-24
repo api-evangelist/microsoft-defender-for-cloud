@@ -1,0 +1,86 @@
+openapi: 3.1.0
+info:
+  title: Microsoft Defender for Cloud REST Alerts SecureScores API
+  description: 'Azure Resource Manager REST API for Microsoft Defender for Cloud.
+
+    Provides cloud security posture management (CSPM) and cloud workload
+
+    protection (CWPP) - security alerts, security assessments, secure
+
+    scores, regulatory compliance, and pricing/plans. Authentication uses
+
+    Azure AD OAuth 2.0 bearer tokens against the management.azure.com
+
+    endpoint with api-version query parameters.
+
+    '
+  version: '2022-01-01'
+  contact:
+    name: Kin Lane
+    email: kin@apievangelist.com
+  license:
+    name: Microsoft Terms of Use
+    url: https://www.microsoft.com/en-us/legal/terms-of-use
+servers:
+- url: https://management.azure.com
+  description: Azure Resource Manager endpoint
+security:
+- azure_auth:
+  - user_impersonation
+tags:
+- name: SecureScores
+  description: Secure score operations
+paths:
+  /subscriptions/{subscriptionId}/providers/Microsoft.Security/secureScores:
+    get:
+      tags:
+      - SecureScores
+      summary: List secure scores for a subscription
+      operationId: secureScores_list
+      parameters:
+      - $ref: '#/components/parameters/subscriptionId'
+      - $ref: '#/components/parameters/apiVersion'
+      responses:
+        '200':
+          description: OK
+  /subscriptions/{subscriptionId}/providers/Microsoft.Security/secureScores/{secureScoreName}:
+    get:
+      tags:
+      - SecureScores
+      summary: Get a secure score
+      operationId: secureScores_get
+      parameters:
+      - $ref: '#/components/parameters/subscriptionId'
+      - name: secureScoreName
+        in: path
+        required: true
+        schema:
+          type: string
+      - $ref: '#/components/parameters/apiVersion'
+      responses:
+        '200':
+          description: OK
+components:
+  parameters:
+    subscriptionId:
+      name: subscriptionId
+      in: path
+      required: true
+      schema:
+        type: string
+    apiVersion:
+      name: api-version
+      in: query
+      required: true
+      schema:
+        type: string
+        default: '2022-01-01'
+  securitySchemes:
+    azure_auth:
+      type: oauth2
+      description: Azure Active Directory OAuth 2.0
+      flows:
+        implicit:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize
+          scopes:
+            user_impersonation: impersonate your user account
