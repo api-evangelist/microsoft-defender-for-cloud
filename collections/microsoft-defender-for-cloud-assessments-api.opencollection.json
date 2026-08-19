@@ -1,0 +1,80 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Microsoft Defender for Cloud REST Alerts Assessments API",
+    "version": "2022-01-01"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "implicit",
+      "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
+      "credentials": {
+        "clientId": "{{clientId}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Assessments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List security assessments for a resource scope",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://management.azure.com/:resourceId/providers/Microsoft.Security/assessments",
+            "params": [
+              {
+                "name": "resourceId",
+                "value": "",
+                "type": "path",
+                "description": "Full resource scope (e.g. subscriptions/{id})"
+              },
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List security assessments for a resource scope"
+        },
+        {
+          "info": {
+            "name": "Get a security assessment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://management.azure.com/:resourceId/providers/Microsoft.Security/assessments/:assessmentName",
+            "params": [
+              {
+                "name": "resourceId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "assessmentName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get a security assessment"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
