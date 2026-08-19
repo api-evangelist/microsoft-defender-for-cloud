@@ -36,7 +36,7 @@ url: >-
   https://raw.githubusercontent.com/api-evangelist/microsoft-defender-for-cloud/refs/heads/main/apis.yml
 created: '2026-05-11'
 modified: '2026-05-11'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - aid: microsoft-defender-for-cloud:rest-api
   name: Microsoft Defender for Cloud REST API
