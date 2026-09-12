@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Microsoft Defender for Cloud REST Alerts SecureScores API
+  title: Microsoft Defender for Cloud REST Alerts Secure Scores API
   description: 'Azure Resource Manager REST API for Microsoft Defender for Cloud.
 
     Provides cloud security posture management (CSPM) and cloud workload
