@@ -44,8 +44,7 @@ tags:
   - Compliance
   - Vulnerability Management
   - Azure
-url: >-
-  https://raw.githubusercontent.com/api-evangelist/microsoft-defender-for-cloud/refs/heads/main/apis.yml
+url: https://azure.microsoft.com/en-us/products/defender-for-cloud
 created: '2026-05-11'
 modified: '2026-05-11'
 specificationVersion: '0.23'
