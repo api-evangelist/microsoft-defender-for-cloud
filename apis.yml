@@ -89,6 +89,8 @@ apis:
   humanURL: https://learn.microsoft.com/en-us/rest/api/defenderforcloud/
   baseURL: https://management.azure.com
   tags:
+  - Assessment
+  tags_raw:
   - Assessments
   properties:
   - type: OpenAPI
