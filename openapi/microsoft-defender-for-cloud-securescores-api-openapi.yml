@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Microsoft Defender for Cloud REST Alerts Secure Scores API
+  title: Microsoft Defender for Cloud REST Secure Scores API
   description: 'Azure Resource Manager REST API for Microsoft Defender for Cloud.
 
     Provides cloud security posture management (CSPM) and cloud workload
@@ -11,9 +11,7 @@ info:
 
     Azure AD OAuth 2.0 bearer tokens against the management.azure.com
 
-    endpoint with api-version query parameters.
-
-    '
+    endpoint with api-version query parameters.'
   version: '2022-01-01'
   contact:
     name: Kin Lane
@@ -62,12 +60,6 @@ paths:
           description: OK
 components:
   parameters:
-    subscriptionId:
-      name: subscriptionId
-      in: path
-      required: true
-      schema:
-        type: string
     apiVersion:
       name: api-version
       in: query
@@ -75,6 +67,12 @@ components:
       schema:
         type: string
         default: '2022-01-01'
+    subscriptionId:
+      name: subscriptionId
+      in: path
+      required: true
+      schema:
+        type: string
   securitySchemes:
     azure_auth:
       type: oauth2

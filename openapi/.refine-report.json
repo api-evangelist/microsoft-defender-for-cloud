@@ -1,10 +1,7 @@
 {
   "provider": "microsoft-defender-for-cloud",
   "sources": [
-    "microsoft-defender-for-cloud-alerts-api-openapi.yml",
-    "microsoft-defender-for-cloud-assessments-api-openapi.yml",
-    "microsoft-defender-for-cloud-pricings-api-openapi.yml",
-    "microsoft-defender-for-cloud-securescores-api-openapi.yml"
+    "_original/microsoft-defender-for-cloud-openapi.yml"
   ],
   "outputs": [
     "microsoft-defender-for-cloud-alerts-api-openapi.yml",
@@ -16,11 +13,14 @@
   "errors": [],
   "warnings": [],
   "notes": [
-    "microsoft-defender-for-cloud-alerts-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "microsoft-defender-for-cloud-assessments-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "microsoft-defender-for-cloud-pricings-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "microsoft-defender-for-cloud-securescores-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "microsoft-defender-for-cloud-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "microsoft-defender-for-cloud-alerts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "microsoft-defender-for-cloud-assessments-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "microsoft-defender-for-cloud-pricings-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "microsoft-defender-for-cloud-securescores-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
