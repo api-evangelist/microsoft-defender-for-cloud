@@ -116,6 +116,9 @@ apis:
   - type: OpenAPI
     url: openapi/microsoft-defender-for-cloud-securescores-api-openapi.yml
 common:
+  - type: CapabilityMap
+    url: capabilities/microsoft-defender-for-cloud-capability-edges.yml
+    name: Microsoft Defender for Cloud Business Capability Map
   - type: AgenticAccess
     url: agentic-access/microsoft-defender-for-cloud-agentic-access.yml
   - type: VulnerabilityDisclosure
