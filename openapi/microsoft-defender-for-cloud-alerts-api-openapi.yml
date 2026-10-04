@@ -167,8 +167,8 @@ paths:
           description: No Content
 components:
   parameters:
-    resourceGroupName:
-      name: resourceGroupName
+    alertName:
+      name: alertName
       in: path
       required: true
       schema:
@@ -180,6 +180,12 @@ components:
       description: Defender for Cloud location/region
       schema:
         type: string
+    subscriptionId:
+      name: subscriptionId
+      in: path
+      required: true
+      schema:
+        type: string
     apiVersion:
       name: api-version
       in: query
@@ -187,19 +193,22 @@ components:
       schema:
         type: string
         default: '2022-01-01'
-    subscriptionId:
-      name: subscriptionId
-      in: path
-      required: true
-      schema:
-        type: string
-    alertName:
-      name: alertName
+    resourceGroupName:
+      name: resourceGroupName
       in: path
       required: true
       schema:
         type: string
   schemas:
+    AlertList:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/Alert'
+        nextLink:
+          type: string
     Alert:
       type: object
       properties:
@@ -241,15 +250,6 @@ components:
               type: array
               items:
                 type: object
-    AlertList:
-      type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/Alert'
-        nextLink:
-          type: string
   securitySchemes:
     azure_auth:
       type: oauth2
