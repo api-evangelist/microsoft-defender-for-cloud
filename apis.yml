@@ -43,6 +43,15 @@ tags:
   - Threat Protection
   - Compliance
   - Vulnerability Management
+  - Microsoft Azure
+tags_raw:
+  - Cloud Security
+  - CSPM
+  - CWPP
+  - CNAPP
+  - Threat Protection
+  - Compliance
+  - Vulnerability Management
   - Azure
 url: https://azure.microsoft.com/en-us/products/defender-for-cloud
 created: '2026-05-11'
