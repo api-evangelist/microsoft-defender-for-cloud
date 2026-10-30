@@ -1,4 +1,4 @@
-# Microsoft Defender for Cloud (microsoft-defender-for-cloud)
+# Microsoft Defender for Cloud
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,65 +66,112 @@
 
 Microsoft Defender for Cloud is Microsoft's unified cloud-native application protection platform (CNAPP) that delivers cloud security posture management (CSPM) and cloud workload protection (CWPP) across Azure, AWS, GCP, and hybrid/on-premises workloads. It provides security recommendations, secure score, regulatory compliance assessments, vulnerability management, and advanced threat protection for servers, containers, databases, storage, and more. The Defender for Cloud REST APIs are part of the Azure Resource Manager surface and authenticate via Azure Active Directory OAuth 2.0 tokens.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/microsoft-defender-for-cloud/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/microsoft-defender-for-cloud/refs/heads/main/apis.yml)
+**Areas:** Cloud Security · CSPM · CWPP · CNAPP · Threat Protection · Compliance · Vulnerability Management · Microsoft Azure
 
-## Scope
+## Microsoft Defender for Cloud on APIs.io
 
-- **Type:** Index
+Everything profiled for Microsoft Defender for Cloud is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/microsoft-defender-for-cloud/](https://apis.io/providers/microsoft-defender-for-cloud/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (5)
 
-- Cloud Security
-- CSPM
-- CWPP
-- CNAPP
-- Threat Protection
-- Compliance
-- Vulnerability Management
-- Azure
+- [Microsoft Defender for Cloud REST API](https://apis.io/apis/microsoft-defender-for-cloud/rest-api/) — Azure Resource Manager REST API for managing Defender for Cloud assessments, alerts, recommendations, secure score, regulatory compliance, pricing/plans,…
+- [Microsoft Defender for Cloud Alerts API](https://apis.io/apis/microsoft-defender-for-cloud/microsoft-defender-for-cloud-alerts-api/) — Security alert operations
+- [Microsoft Defender for Cloud Assessments API](https://apis.io/apis/microsoft-defender-for-cloud/microsoft-defender-for-cloud-assessments-api/) — Security assessment operations
+- [Microsoft Defender for Cloud Pricings API](https://apis.io/apis/microsoft-defender-for-cloud/microsoft-defender-for-cloud-pricings-api/) — Defender plan/pricing operations
+- [Microsoft Defender for Cloud SecureScores API](https://apis.io/apis/microsoft-defender-for-cloud/microsoft-defender-for-cloud-securescores-api/) — Secure score operations
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-05-11
-- **Modified:** 2026-05-11
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Microsoft Defender for Cloud REST API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-Azure Resource Manager REST API for managing Defender for Cloud assessments, alerts, recommendations, secure score, regulatory compliance, pricing/plans, security contacts, and connectors for multi-cloud environments. Authentication is via Azure AD OAuth 2.0 bearer tokens against the management.azure.com endpoint with api-version query parameters.
+- [Microsoft Defender For Cloud Agentic Access](https://apis.io/agentic-access/microsoft-defender-for-cloud/microsoft-defender-for-cloud-agentic-access/)
 
-- **Human URL:** [https://learn.microsoft.com/en-us/rest/api/defenderforcloud/](https://learn.microsoft.com/en-us/rest/api/defenderforcloud/)
-- **Base URL:** `https://management.azure.com`
+#### Collections (5)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- Cloud Security
-- CSPM
-- CWPP
-- Azure Resource Manager
-- Threat Protection
+- [Microsoft Defender for Cloud REST API](https://apis.io/collections/microsoft-defender-for-cloud/open-microsoft-defender-for-cloud/)
+- [Microsoft Defender for Cloud REST Alerts API](https://apis.io/collections/microsoft-defender-for-cloud/open-microsoft-defender-for-cloud-alerts-api/)
+- [Microsoft Defender for Cloud REST Alerts Assessments API](https://apis.io/collections/microsoft-defender-for-cloud/open-microsoft-defender-for-cloud-assessments-api/)
+- [Microsoft Defender for Cloud REST Alerts Pricings API](https://apis.io/collections/microsoft-defender-for-cloud/open-microsoft-defender-for-cloud-pricings-api/)
+- [Microsoft Defender for Cloud REST Alerts SecureScores API](https://apis.io/collections/microsoft-defender-for-cloud/open-microsoft-defender-for-cloud-securescores-api/)
 
-#### Properties
+#### Security (3)
 
-- [Documentation](https://learn.microsoft.com/en-us/rest/api/defenderforcloud/)
-- [Operation  Groups](https://learn.microsoft.com/en-us/rest/api/defenderforcloud-composite/operation-groups)
-- [Open A P I  Specifications](https://github.com/Azure/azure-rest-api-specs/tree/main/specification/security)
-- [Azure  S D K](https://learn.microsoft.com/en-us/azure/developer/)
-- [Postman Collection](collections/microsoft-defender-for-cloud.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/microsoft-defender-for-cloud.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Authentication, trust centre, and vulnerability disclosure.
 
-## Common Properties
+- [Microsoft Defender For Cloud Authentication](https://apis.io/security/microsoft-defender-for-cloud/microsoft-defender-for-cloud-authentication/)
+- [Microsoft Defender For Cloud Domain Security](https://apis.io/security/microsoft-defender-for-cloud/microsoft-defender-for-cloud-domain-security/)
+- [Microsoft Defender For Cloud Vulnerability Disclosure](https://apis.io/security/microsoft-defender-for-cloud/microsoft-defender-for-cloud-vulnerability-disclosure/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Microsoft Defender For Cloud Scopes](https://apis.io/scopes/microsoft-defender-for-cloud/microsoft-defender-for-cloud-scopes/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://azure.microsoft.com/en-us/products/defender-for-cloud)
 - [Documentation](https://learn.microsoft.com/en-us/azure/defender-for-cloud/)
-- [R E S T  A P I  Documentation](https://learn.microsoft.com/en-us/rest/api/defenderforcloud/)
 - [Pricing](https://azure.microsoft.com/en-us/pricing/details/defender-for-cloud/)
-- [Sign Up](https://azure.microsoft.com/en-us/free/)
-- [Git Hub  Open A P I  Specs](https://github.com/Azure/azure-rest-api-specs/tree/main/specification/security)
-- [L L Ms Txt](https://azure.microsoft.com/llms.txt)
+- [Blog](https://www.microsoft.com/en-us/security/blog/product/microsoft-defender-for-cloud/feed/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 29.4** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 80.4 |
+| Contract quality | 42.9 |
+| Contract governance | 0.0 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 23.8 |
+| Access clarity | 23.7 |
+
+**Agent readiness 17.3** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 27.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/microsoft-defender-for-cloud/](https://apis.io/providers/microsoft-defender-for-cloud/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Microsoft Defender for Cloud: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/microsoft-defender-for-cloud/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
